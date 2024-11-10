@@ -7,6 +7,9 @@ spec:
     matchLabels:
       app: '{{ .Values.appname }}'
   template:
+    metadata:
+      labels:
+        app: '{{ .Values.appname }}'
     spec:
       containers:
         - name: app
