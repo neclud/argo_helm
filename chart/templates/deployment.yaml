@@ -12,7 +12,7 @@ spec:
         app: '{{ .Values.appname }}'
     spec:
       containers:
-        - name: app
+        - name: '{{ .Values.appname }}'
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           command: ["bin/sh"]
